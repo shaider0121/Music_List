@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>My Music List</h1>
+
+    <h2>Now Playing</h2>
+
+    <p id="songTitle">Perfect</p>
+    <p id="artistName">Ed Sheeran</p>
+
+    <audio id="audioPlayer" controls>
+        <source src="music/song1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Playlist</h2>
+
+    <ul>
+        <li>
+            <p>Perfect - Ed Sheeran</p>
+            <button onclick="playSong('music/song1.mp3', 'Perfect', 'Ed Sheeran')">
+                Play
+            </button>
+        </li>
+
+        <li>
+            <p>Photograph - Ed Sheeran</p>
+            <button onclick="playSong('music/song2.mp3', 'Photograph', 'Ed Sheeran')">
+                Play
+            </button>
+        </li>
+
+        <li>
+            <p>Night Changes - One Direction</p>
+            <button onclick="playSong('music/song3.mp3', 'Night Changes', 'One Direction')">
+                Play
+            </button>
+        </li>
+
+        <li>
+            <p>Love Yourself - Justin Bieber</p>
+            <button onclick="playSong('music/song4.mp3', 'Love Yourself', 'Justin Bieber')">
+                Play
+            </button>
+        </li>
+
+        <li>
+            <p>All of Me - John Legend</p>
+            <button onclick="playSong('music/song5.mp3', 'All of Me', 'John Legend')">
+                Play
+            </button>
+        </li>
+    </ul>
+
+    <script>
+        function playSong(file, title, artist) {
+            const player = document.getElementById("audioPlayer");
+
+            document.getElementById("songTitle").textContent = title;
+            document.getElementById("artistName").textContent = artist;
+
+            player.src = file;
+            player.play();
+        }
+    </script>
+
+</body>
+</html>
+
